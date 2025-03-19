@@ -1,0 +1,15 @@
+div.cardimg {
+    @apply w-full h-[70%] relative overflow-hidden rounded-t-lg;
+  }
+  
+  div.cardimg img {
+    transition: transform 0.5s ease;
+  }
+  
+  div.cardimg:hover img {
+    transform: scale(1.05);
+  }
+  
+  div.cardtext {
+    @apply p-4 bg-gray-800/95 backdrop-blur-sm;
+  }

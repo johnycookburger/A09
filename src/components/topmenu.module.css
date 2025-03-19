@@ -1,0 +1,75 @@
+.topMenu {
+    height: var(--top-munu-height);
+    background-color: #121212;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    border-top: 2px solid #ffa500;
+    border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 2rem;
+    position: relative;
+  }
+  
+  .logoImg {
+    height: 100%;
+    width: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .logoContainer:hover .logoImg {
+    transform: scale(1.05);
+  }
+  
+  .menuItems {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+  }
+  
+  .itemcontainer {
+    @apply text-center my-auto text-base text-gray-300 font-sans py-2 px-4 transition-colors relative;
+  }
+  
+  .itemcontainer:hover {
+    @apply text-amber-500;
+  }
+  
+  .itemcontainer::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffa500;
+    transition: width 0.3s ease;
+  }
+  
+  .itemcontainer:hover::after {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .topMenu {
+      padding: 0 1rem;
+    }
+    
+    .logoContainer {
+      margin-left: 0.5rem;
+    }
+  }

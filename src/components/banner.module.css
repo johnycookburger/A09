@@ -1,0 +1,152 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: calc(100vh - var(--top-munu-height));
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bannerText {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2.5rem;
+    border-radius: 10px;
+    max-width: 700px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+  }
+  
+  .bannerTextHidden {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+  }
+  
+  .slideButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+  }
+  
+  .slideButton:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .prevButton {
+    left: 20px;
+  }
+  
+  .nextButton {
+    right: 20px;
+  }
+  
+  .actionButton {
+    position: relative;
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    background-color: #ffa500;
+    color: #121212;
+    font-weight: 600;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .actionButton:hover {
+    background-color: #ffb733;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+  }
+  
+  .imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 0;
+  }
+  
+  .activeImage {
+    opacity: 1;
+  }
+  
+  .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .activeDot {
+    background-color: #ffa500;
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 768px) {
+    .banner {
+      height: 60vh;
+    }
+    
+    .bannerText {
+      padding: 1.5rem;
+      width: 90%;
+    }
+    
+    .actionButton {
+      padding: 0.5rem 1.5rem;
+    }
+  }
