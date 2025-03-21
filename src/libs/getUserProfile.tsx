@@ -11,6 +11,8 @@ export default async function getUserProfile(token: string) {
       }
     );
     
+    // rest of the code remains the same
+    
     if (!response.ok) {
       throw new Error(`Failed to fetch user profile: ${response.status}`);
     }
